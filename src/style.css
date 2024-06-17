@@ -1,0 +1,65 @@
+.gallery {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.photo {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px 8px 0 0; /* Redondear solo la parte superior de la imagen */
+}
+
+.photo p {
+  padding: 10px;
+  text-align: center;
+  background-color: #f0f0f0;
+  margin: 0;
+  border-radius: 0 0 8px 8px; /* Redondear solo la parte inferior del texto */
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px; /* Reducir el espacio entre las fotos en pantallas más pequeñas */
+  }
+
+  .photo {
+    border-radius: 6px; /* Reducir el radio de los bordes para adaptarse mejor en pantallas pequeñas */
+  }
+
+  .photo img {
+    border-radius: 6px 6px 0 0; /* Ajustar el redondeo superior de la imagen */
+  }
+
+  .photo p {
+    padding: 8px; /* Reducir el espacio interior del texto */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px; /* Reducir aún más el espacio entre las fotos en pantallas muy pequeñas */
+  }
+
+  .photo {
+    border-radius: 4px; /* Reducir aún más el radio de los bordes para adaptarse mejor */
+  }
+
+  .photo img {
+    border-radius: 4px 4px 0 0; /* Ajustar el redondeo superior de la imagen */
+  }
+
+  .photo p {
+    padding: 6px; /* Reducir el espacio interior del texto */
+    font-size: 12px; /* Reducir el tamaño de fuente para que quepa en pantallas pequeñas */
+  }
+}
